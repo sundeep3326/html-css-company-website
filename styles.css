@@ -7,7 +7,6 @@ body {
   line-height: 1.6;
   font-size: normal;
   font-family: "Poppins", sans-serif;
-  background-image: url();
 }
 a {
   text-decoration: none;
@@ -21,19 +20,29 @@ a {
   background-color: none;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  background-color: lightgray;
+  opacity: 1;
 }
 .top-bar h1 {
   font-size: 28px;
   font-weight: 700;
 }
-ul {
+.top-bar {
+  flex: 1;
+  text-align: right;
+}
+.top-bar ul li {
   list-style: none;
-  display: flex;
-  gap: 20px;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+  font-weight: 500;
 }
 ul li a:hover {
   color: #ff6600;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 /* section-1 */
 .section-1 {
@@ -45,7 +54,7 @@ ul li a:hover {
 }
 .section-1 h1 {
   font-size: 50px;
-  margin-bottom: 20px;
+  margin-top: 20px;
   padding: 30px;
 }
 .section-1 .text p {
@@ -58,10 +67,7 @@ ul li a:hover {
   object-fit: cover;
   margin-right: 100px;
 }
-.section-1 .question {
-  padding: 30px;
-  margin-top: 20px;
-}
+
 /* about-us */
 .about-us-section span {
   color: #ff6600;
@@ -78,10 +84,15 @@ ul li a:hover {
   width: 400px;
   height: 500px;
   object-fit: cover;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-right: 100px;
   border-radius: 5px;
 }
+@media (max-width: 480px) {
+  .about-us-section .photo {
+  }
+}
+
 .about-us-section h2 {
   font-size: 40px;
   margin-top: 20px;
@@ -92,6 +103,52 @@ ul li a:hover {
   line-height: 1.8;
   margin-top: 20px;
 }
+/* services-section */
+.services-section {
+  padding: 40px;
+  margin-top: 20px;
+}
+.services-section .services-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.services-section span {
+  color: #ff6600;
+  line-height: 5;
+}
+.services-section h2 {
+  font-size: 40px;
+}
+.services-section p {
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 22px;
+  padding: 10px;
+}
+.services-section h3 {
+  text-align: center;
+}
+.cells {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.cells .cell {
+  flex-basis: 31%;
+  background: lightgray;
+  border-radius: 5px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transform: 0.2s;
+  margin: 10px;
+}
+.cells .cell:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+/* contact-section */
+
 @media (max-width: 800px) {
   .top-bar {
     flex-direction: column;
@@ -100,6 +157,7 @@ ul li a:hover {
   .top-bar h1 {
     font-size: 25px;
   }
+  /* section-1 */
   .section-1 {
     flex-direction: column-reverse;
     text-align: center;
@@ -111,16 +169,30 @@ ul li a:hover {
   .section-1 .photo img {
     height: 200px;
     margin-top: 20px;
-    margin-right: 0;
+    margin: 0 auto;
   }
+  /* about-us-section */
   .about-us-section {
     flex-direction: column;
     text-align: center;
   }
-  .about-us-section .photo img {
-    height: 100px;
-    width: 100px;
-    margin-top: 20px;
+  .about-us-section h2 {
+    font-size: 20px;
+  }
+  .about-us-section {
+    display: block;
+    /* margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    background-color: red; */
+    background-color: red;
+  }
+  /* service-section */
+  .services-section h2 {
+    font-size: 20px;
+  }
+  .cells {
+    flex-direction: column;
   }
 }
 

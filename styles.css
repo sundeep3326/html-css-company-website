@@ -5,7 +5,6 @@
 }
 body {
   line-height: 1.6;
-  font-size: normal;
   font-family: "Poppins", sans-serif;
 }
 a {
@@ -17,7 +16,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: none;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
   position: sticky;
@@ -29,21 +27,17 @@ a {
   font-size: 28px;
   font-weight: 700;
 }
-.top-bar {
-  flex: 1;
-  text-align: right;
-}
 .top-bar ul li {
-  list-style: none;
   display: inline-block;
   padding: 8px 12px;
-  position: relative;
   font-weight: 500;
 }
 ul li a:hover {
   color: #ff6600;
   transition: 0.2s;
 }
+/* sidebar menu */
+
 /* section-1 */
 .section-1 {
   display: flex;
@@ -63,11 +57,10 @@ ul li a:hover {
   margin-top: 20px;
 }
 .section-1 .photo img {
-  height: 250px;
+  height: 300px;
   object-fit: cover;
   margin-right: 100px;
 }
-
 /* about-us */
 .about-us-section span {
   color: #ff6600;
@@ -90,6 +83,9 @@ ul li a:hover {
 }
 @media (max-width: 480px) {
   .about-us-section .photo {
+    width: 300px;
+    height: 400px;
+    margin-right: 0;
   }
 }
 
@@ -144,11 +140,61 @@ ul li a:hover {
   margin: 10px;
 }
 .cells .cell:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 /* contact-section */
-
+.contact-section {
+  padding: 40px;
+  margin-top: 20px;
+}
+.contact-section h2 {
+  font-size: 40px;
+  margin-top: 40px;
+}
+.contact-section .section-text {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 30px;
+}
+.contact-section .section-text form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.contact-section .section-text form input,
+.contact-section .section-text form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  resize: none;
+}
+.contact-section .section-text form button {
+  padding: 10px;
+  background-color: lightgray;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.contact-section .section-text form button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+/* footer */
+.footer {
+  background-color: lightgray;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  padding: 20px;
+}
 @media (max-width: 800px) {
   .top-bar {
     flex-direction: column;
@@ -185,13 +231,16 @@ ul li a:hover {
     max-width: 100%;
     height: auto;
     background-color: red; */
-    background-color: red;
   }
   /* service-section */
   .services-section h2 {
     font-size: 20px;
   }
   .cells {
+    flex-direction: column;
+  }
+  /* contact-section */
+  .contact-section .section-text {
     flex-direction: column;
   }
 }
